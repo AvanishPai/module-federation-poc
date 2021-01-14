@@ -1,12 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "start": "lerna run --scope @basic-host-remote/* --parallel start",
-    "build": "lerna run --scope @basic-host-remote/* build",
-    "serve": "lerna run --scope @basic-host-remote/* --parallel serve",
-    "clean": "lerna run --scope @basic-host-remote/* --parallel clean"
+    "start:app1": "cd app1 && npm start",
+    "start:app2": "cd app2 && npm start",
+    "start": "concurrently \"npm run start:app1\" \"npm run start:app2\""
   },
   "devDependencies": {
-    "lerna": "3.22.1"
+    "concurrently": "^5.3.0"
   }
 }
